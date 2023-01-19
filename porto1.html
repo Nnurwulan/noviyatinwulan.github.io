@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sisdos</title>
+    <script src="https://kit.fontawesome.com/9b665c25c1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero-about">
+        <nav>
+            <div class="image-hero">
+            <img src="img4.PNG" class="logo">
+            </div>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="porto.html">PORTOFOLIO</a></li>
+          </ul>
+        </nav>
+    </div>
+    <section>
+        <div class="porto1">
+            <div class="capt-porto1">
+                <h1>Lecturer Information System</h1>
+            </div>
+            <div class="img-porto1">
+                <img src="p1.PNG">
+            </div>
+            <div class="exp-porto1">
+                <h4>Tools</h4>
+                <p>Laravel, PHP, CSS</p>
+            </div>
+            <div class="hasil">
+                <h2>The Brief</h2>
+                <p>The development of information and management systems in tertiary institutions is very important. 
+                    This is due to the increasing need for and the completeness of the attributes of each component 
+                    related to academic affairs in tertiary institutions. Therefore, data management and good governance 
+                    are needed so that information becomes accurate, transparent, accountable and up to date. This 
+                    information system can certainly provide an overview and formulation to leaders in implementing 
+                    policies towards lecturers.</p>
+                <p>because the sttnf campus previously had information in different places, so I want to unify all the information in one place.</p>
+                <h3>The Result</h3>
+                <p>It is hoped that the design of the lecturer information system 
+                website will make it easier for lecturers and academic administration 
+                to obtain data containing standard operating procedures.</p>
+                <p>Besides that, it can help lecturers to find the required information validly, quickly, and easily.</p>
+                <p>Lecturer information system includes several stages, namely finding information needed by lecturers 
+                and analyzing information needs. In addition, the implementation of a web-based information
+                system uses PHP and the Laravel framework to make it easier to work on making the web so that the system 
+                will be more efficient and neat.</p>
+            </div>
+        </div>
+    </section>
+    <section class="foot">
+        <div class="capt-foot">
+            <h7>CONTACT ME</h7>
+            <p>FOR COLLABORATION OR IF YOU JUST HAVE QUESTION, <BR>PLEASE FILL IN THE FORM BELOW<BR></p>
+        </div>
+        <div class="footer">
+            <div class="box-footer">
+                <div class="box">
+                    <div class="box-foot">
+                        <form action="">
+                            <div class="form-group">
+                            <input type="text" id="name" name="firstname" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                            <input type="text" id="name" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                            <input type="text" id="name" name="Subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                            <textarea type="text-box" id="name" name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-submit">
+                            <input type="submit" value="SUBMIT">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="more-foot">
+                    <div class="capt-icon" >
+                        <p>Contact Information</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-location-dot" style="font-size: 20px; color: aliceblue;"></i>
+                        <p>Address : Jl. Rorotan cilincing,<br>North Jakarta, DKI Jakarta</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-phone" style="font-size: 20px; color: aliceblue;"></i>
+                        <p>Phone : +6289678459182</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-envelope" style="font-size: 20px; color: aliceblue;"></i>
+                        <p>Email : nnwulan77@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="made">
+        <i class="fa-regular fa-copyright" style="font-size: 10px; color: aliceblue; text-align: center; padding-top: 10px;"></i>
+        <p>2023 Noviyati Nur Wulan</p>
+    </section>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxJFjk6El0qaYyG9yqsUMM8ToBmTFcx_UzfUe4pd68Gnh8KEqhpBqwOBlrxosUl5OVS/exec'
+        const form = document.forms['contact-porto'];
+        const btnSend = document.querySelector('.btnSend');
+        const btnAlert = document.querySelector('.audun_success');
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                btnSend.classList.toggle('d-none');
+                btnAlert.classList.toggle('d-none');
+                form.reset();
+                console.log('Success!', response);
+        })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

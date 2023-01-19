@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--navbar-->
+  <div class="hero">
+    <nav>
+      <div class="image-hero">
+        <img src="IMG4.PNG" class="logo">
+        </div>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="porto.html">PORTOFOLIO</a></li>
+      </ul>
+    </nav>
+
+    <!--cap-->
+    <div class="detail">
+      <h1>I'M NOVIYATI NUR <span>WULAN</span> </h1>
+        <p>THIS IS MY OFFICIAL PORTOFOLIO WEBSITE<br>
+        TO SHOW ALL MY WORK EXPERIENCES</p>
+        <a href="CV-Noviyati Nur_Wulan.pdf">DOWNLOAD CV</a>
+    </div>
+
+    <!--img-->
+    <div class="image">
+      <img src="" class="shape">
+      <img src="img2.png" class="girl">
+    </div>
+  </div>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxJFjk6El0qaYyG9yqsUMM8ToBmTFcx_UzfUe4pd68Gnh8KEqhpBqwOBlrxosUl5OVS/exec'
+    const form = document.forms['contact-porto'];
+    const btnSend = document.querySelector('.btnSend');
+    const btnAlert = document.querySelector('.audun_success');
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            btnSend.classList.toggle('d-none');
+            btnAlert.classList.toggle('d-none');
+            form.reset();
+            console.log('Success!', response);
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
